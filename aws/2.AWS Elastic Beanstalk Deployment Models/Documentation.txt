@@ -1,0 +1,147 @@
+# AWS ELASTIC BEANSTALK DEPLOYMENT MODELS
+
+1. PROJECT OBJECTIVE
+
+---
+
+To understand AWS Elastic Beanstalk and its different deployment
+models and deployment strategies.
+
+2. WHAT IS AWS ELASTIC BEANSTALK?
+
+---
+
+AWS Elastic Beanstalk is a Platform-as-a-Service (PaaS) that makes
+application deployment easier.
+
+It automatically manages infrastructure such as EC2 instances,
+Auto Scaling Groups, Load Balancers, VPC, Security Groups and IAM
+roles.
+
+3. APPLICATION DEPLOYMENT
+
+---
+
+The basic deployment process is:
+
+Application Code (.zip)
+|
+v
+AWS Elastic Beanstalk
+|
+v
+EC2 Instances
+|
+v
+Application URL
+
+The application code is uploaded to Elastic Beanstalk, which creates
+and manages the required environment.
+
+4. ENVIRONMENT TYPES
+
+---
+
+### Single Instance
+
+Uses a single EC2 instance.
+
+Suitable for:
+
+* Development
+* Testing
+
+### High Availability
+
+Uses multiple EC2 instances with Auto Scaling and an Application
+Load Balancer.
+
+Suitable for:
+
+* Production workloads
+* Better availability
+
+5. DEPLOYMENT POLICIES
+
+---
+
+### All at Once
+
+Deploys the new version to all instances at the same time.
+
+* Fast deployment
+* Can cause downtime
+
+### Rolling
+
+Updates instances in batches to reduce downtime.
+
+### Rolling with Batches
+
+Updates instances in smaller batches while keeping other instances
+available.
+
+### Immutable
+
+Creates new instances for the new application version.
+
+This provides a safer deployment method.
+
+6. BLUE-GREEN DEPLOYMENT
+
+---
+
+Blue-Green deployment uses two separate environments.
+
+Blue = Current application version
+
+Green = New application version
+
+Deployment process:
+
+1. Deploy the new version to Green.
+2. Test the Green environment.
+3. Validate the application.
+4. Switch traffic from Blue to Green.
+5. Green becomes the active environment.
+
+This approach helps achieve zero-downtime releases and makes
+rollback easier.
+
+7. AWS SERVICES
+
+---
+
+* AWS Elastic Beanstalk
+* Amazon EC2
+* Amazon VPC
+* Application Load Balancer
+* Auto Scaling Group
+* Security Groups
+* IAM Roles
+* Amazon S3
+* Amazon CloudWatch
+
+8. KEY LEARNINGS
+
+---
+
+* AWS Elastic Beanstalk
+* Application deployment
+* Single Instance deployment
+* High Availability deployment
+* Deployment policies
+* Blue-Green deployment
+* Auto Scaling
+* Load Balancing
+
+9. CONCLUSION
+
+---
+
+AWS Elastic Beanstalk simplifies application deployment by managing
+the underlying infrastructure.
+
+Different deployment strategies can be selected depending on the
+application requirements and the desired level of availability and
+deployment safety.
