@@ -1,147 +1,178 @@
 # AWS ELASTIC BEANSTALK DEPLOYMENT MODELS
 
-1. PROJECT OBJECTIVE
+## PROJECT 2
+
+Project Name:
+AWS Elastic Beanstalk Deployment Models
+
+1. PROJECT SETUP
 
 ---
 
-To understand AWS Elastic Beanstalk and its different deployment
-models and deployment strategies.
+1. Log in to the AWS Management Console.
 
-2. WHAT IS AWS ELASTIC BEANSTALK?
+2. Open the AWS Elastic Beanstalk service.
 
----
+3. Prepare the application files and create a ZIP package.
 
-AWS Elastic Beanstalk is a Platform-as-a-Service (PaaS) that makes
-application deployment easier.
+4. Keep the application ZIP file ready for deployment.
 
-It automatically manages infrastructure such as EC2 instances,
-Auto Scaling Groups, Load Balancers, VPC, Security Groups and IAM
-roles.
-
-3. APPLICATION DEPLOYMENT
+5. IAM ROLE CONFIGURATION
 
 ---
 
-The basic deployment process is:
+1. Open the IAM service.
 
-Application Code (.zip)
-|
-v
-AWS Elastic Beanstalk
-|
-v
-EC2 Instances
-|
-v
-Application URL
+2. Go to Roles.
 
-The application code is uploaded to Elastic Beanstalk, which creates
-and manages the required environment.
+3. Check the IAM roles required for the Elastic Beanstalk environment.
 
-4. ENVIRONMENT TYPES
+4. Verify that the required permissions are attached.
+
+5. Make sure Elastic Beanstalk can use the required IAM roles
+   during environment creation and application deployment.
+
+6. CREATE ELASTIC BEANSTALK APPLICATION
 
 ---
 
-### Single Instance
+1. Open Elastic Beanstalk.
 
-Uses a single EC2 instance.
+2. Create a new application.
 
-Suitable for:
+3. Enter the application name.
 
-* Development
-* Testing
+4. Select the required application platform.
 
-### High Availability
+5. Upload the application ZIP file.
 
-Uses multiple EC2 instances with Auto Scaling and an Application
-Load Balancer.
+6. Create the environment.
 
-Suitable for:
-
-* Production workloads
-* Better availability
-
-5. DEPLOYMENT POLICIES
+7. CONFIGURE ENVIRONMENT
 
 ---
 
-### All at Once
+Check the environment configuration after creation.
 
-Deploys the new version to all instances at the same time.
+The environment can use AWS resources such as:
 
-* Fast deployment
-* Can cause downtime
-
-### Rolling
-
-Updates instances in batches to reduce downtime.
-
-### Rolling with Batches
-
-Updates instances in smaller batches while keeping other instances
-available.
-
-### Immutable
-
-Creates new instances for the new application version.
-
-This provides a safer deployment method.
-
-6. BLUE-GREEN DEPLOYMENT
-
----
-
-Blue-Green deployment uses two separate environments.
-
-Blue = Current application version
-
-Green = New application version
-
-Deployment process:
-
-1. Deploy the new version to Green.
-2. Test the Green environment.
-3. Validate the application.
-4. Switch traffic from Blue to Green.
-5. Green becomes the active environment.
-
-This approach helps achieve zero-downtime releases and makes
-rollback easier.
-
-7. AWS SERVICES
-
----
-
-* AWS Elastic Beanstalk
-* Amazon EC2
-* Amazon VPC
+* EC2
+* VPC
+* Security Groups
 * Application Load Balancer
 * Auto Scaling Group
-* Security Groups
 * IAM Roles
-* Amazon S3
-* Amazon CloudWatch
 
-8. KEY LEARNINGS
+5. SINGLE INSTANCE DEPLOYMENT
 
 ---
 
-* AWS Elastic Beanstalk
-* Application deployment
-* Single Instance deployment
-* High Availability deployment
+1. Configure the environment as Single Instance.
+
+2. Create the environment.
+
+3. Verify that the EC2 instance is running.
+
+4. Open the Elastic Beanstalk environment URL.
+
+5. Verify that the application is working.
+
+6. HIGH AVAILABILITY DEPLOYMENT
+
+---
+
+1. Configure the environment for High Availability.
+
+2. Use multiple EC2 instances.
+
+3. Configure an Application Load Balancer.
+
+4. Configure Auto Scaling.
+
+5. Create/update the environment.
+
+6. Verify that the application is accessible through the
+   environment URL.
+
+7. APPLICATION TESTING
+
+---
+
+1. Open the Elastic Beanstalk environment.
+
+2. Check the environment health.
+
+3. Open the environment URL in a browser.
+
+4. Verify that the application loads correctly.
+
+5. Check that the required EC2 and load balancing resources
+   are working correctly.
+
+6. DEPLOYMENT POLICIES
+
+---
+
+Test the application deployment using the available policies:
+
+* All at Once
+* Rolling
+* Rolling with Batches
+* Immutable
+
+For each deployment, verify that the new application version
+is deployed successfully.
+
+9. BLUE-GREEN DEPLOYMENT
+
+---
+
+1. Create the Blue environment with the current application version.
+
+2. Create the Green environment for the new application version.
+
+3. Deploy the new application version to the Green environment.
+
+4. Test the Green environment.
+
+5. Verify that the new version is working correctly.
+
+6. Switch traffic from the Blue environment to the Green environment.
+
+7. Verify that users are now reaching the Green environment.
+
+8. Keep the Blue environment available temporarily for rollback
+   if required.
+
+9. FINAL VERIFICATION
+
+---
+
+Verify the following:
+
+* Elastic Beanstalk environment is healthy.
+* Application is accessible.
+* EC2 instances are running.
+* Load Balancer is working.
+* Auto Scaling is configured where required.
+* IAM roles and permissions are working.
+* New application version is working correctly.
+* Traffic is reaching the correct environment.
+
+11. PROJECT RESULT
+
+---
+
+Successfully deployed and tested an application using AWS
+Elastic Beanstalk.
+
+The project covered:
+
+* Elastic Beanstalk application deployment
+* IAM role configuration
+* Single Instance environment
+* High Availability environment
 * Deployment policies
 * Blue-Green deployment
-* Auto Scaling
-* Load Balancing
-
-9. CONCLUSION
-
----
-
-AWS Elastic Beanstalk simplifies application deployment by managing
-the underlying infrastructure.
-
-Different deployment strategies can be selected depending on the
-application requirements and the desired level of availability and
-deployment safety.
+* Traffic switching
+* Application testing
