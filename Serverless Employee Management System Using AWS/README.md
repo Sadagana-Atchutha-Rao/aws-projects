@@ -24,23 +24,8 @@ Instructions
    Go to Bucket Policy and generate a policy for getobject or make the objects public  --> put /* in policy
    
    OPen URL and Submit the data
-   
---> TASK : Enable CF for the S3 with ROute53 DNS Name
+5. Enable CF for the S3 with ROute53 DNS Name
 
---> Add on : AWS Cognito
-
---> Create a User pool --> Cognito user pool --> 
-Cognito user pool sign-in options : Email --> Next
-Cognito defaults : Multi-factor authentication: NO MFA, rest keep defaults --> Next
-Required attributes --> while signup, firstname, lastname --> Keep all Defaults --> Next
-Email --> Send email with Cognito --> keep defaults --> Next
-User pool name : anyname, projectuserpool, Use the Cognito Hosted UI --> yes --> Cognito domain --> give anyname
---> Initial app client --> Public client --> App client name --> projectuserpool --> Client secret -> NO
---> URL --> PUT HTTPS URL (CF URL)
---> Create
-
---> Create sample user to login 
---> APP Integration --> COme down --> Click on projectuserpool --> open hosted UI 
 
 
 
